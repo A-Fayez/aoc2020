@@ -1,6 +1,5 @@
-use std::fs;
 fn main() {
-    let numbers_str = fs::read_to_string("inputs/day01.txt").unwrap();
+    let numbers_str = include_str!("inputs/day01.txt");
     let numbers: Vec<u32> = numbers_str
         .lines()
         .map(|x| x.parse::<u32>().unwrap())
