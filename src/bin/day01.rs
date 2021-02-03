@@ -13,7 +13,13 @@ fn main() {
 
         for j in (i + 1)..size {
             if v + numbers[j] == 2020 {
-                println!("Answer: {}, {}", v, numbers[j])
+                println!("Part1:Answer: {}", v * numbers[j])
+            }
+
+            for k in (j + 1)..size {
+                if v + numbers[j] + numbers[k] == 2020 {
+                    println!("Part2:Answer: {}", v * numbers[j] * numbers[k])
+                }
             }
         }
     }
