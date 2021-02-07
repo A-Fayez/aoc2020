@@ -8,7 +8,6 @@ fn main() {
         let t: Vec<&str> = line.split(": ").collect();
         let policy = Policy::new(t[0].to_string());
         let password = Password(t[1].to_string());
-
         if password.part1_is_valid_against(&policy) {
             valid_passwords.0 = valid_passwords.0 + 1;
         }
