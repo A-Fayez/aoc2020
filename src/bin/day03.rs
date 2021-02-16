@@ -1,7 +1,6 @@
 const INPUT: &'static str = include_str!("inputs/day03.txt");
 fn main() {
     println!("part1 Answer: {}", count_trees(3, 1, INPUT));
-
     let part2 = count_trees(3, 1, INPUT)
         * count_trees(1, 1, INPUT)
         * count_trees(5, 1, INPUT)
@@ -20,10 +19,8 @@ fn test_count_trees() {
 fn count_trees(right: usize, down: usize, input: &str) -> usize {
     let mut trees_count = 0;
     let lines = input.lines().collect::<Vec<&str>>();
-
     let max_row = lines.len() - 1;
     let max_col = lines[0].chars().collect::<Vec<_>>().len();
-
     let mut cur_col = 0;
     let mut cur_row = 0;
 

@@ -1,9 +1,9 @@
-//use anyhow::Result;
 use parse_display::{Display, FromStr};
 use raster::Color;
 use std::{fmt, str::FromStr};
 
 const INPUT: &'static str = include_str!("inputs/day04.txt");
+
 fn main() {
     println!("part1 -> valid passports: {}", part1(INPUT));
     println!("part2 -> valid passports: {}", part2(INPUT));
@@ -24,6 +24,7 @@ fn part2(input: &str) -> usize {
         .filter(|p| p.as_ref().unwrap().is_valid())
         .count()
 }
+
 struct Passport {
     fields: Vec<Field>,
 }
@@ -34,6 +35,7 @@ struct Field {
     _type: FieldType,
     value: String,
 }
+
 #[derive(Display, FromStr, Debug)]
 #[display(style = "lowercase")]
 enum FieldType {
